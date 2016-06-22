@@ -1,115 +1,144 @@
-CREATE TABLE 'ApcFBBoardData' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'ApcFFBoardData' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'ArrangementGroupProducts' ( 'IDNUM' varchar(100), 'Group' varchar(100), 'Lot' varchar(100) );
-CREATE TABLE 'BeamData' ( 'IDNUM' varchar(100), 'Head' varchar(100), 'NzlChg' varchar(100), 'BulkFdr' varchar(100), 'StickFdr' varchar(100), 'CutUnit' varchar(100), 'Ccamera' varchar(100), 'Camera' varchar(100), 'LeadChk' varchar(100), 'Sensor3D' varchar(100), 'BGACSP' varchar(100), 'SPNzl' varchar(100), 'LoadCntl' varchar(100), 'TrayMagazine' varchar(100), 'DblFdrUse' varchar(100), 'HeadType' varchar(100), 'NzlChgKind' varchar(100), 'NzlSlots' varchar(100), 'NzlBigSlots' varchar(100), 'Flux' varchar(100), 'ConvTime' varchar(100), 'DHHighScan' varchar(100), 'FdrTblType' varchar(100), 'FdrSlots' varchar(100), 'FrameType' varchar(100), 'TraySlots' varchar(100), 'TraySize' varchar(100), 'EjCnv' varchar(100), 'Stage' varchar(100), 'ExConv' varchar(100), 'ExBigNzl' varchar(100), 'Lane' varchar(100), 'SlowDown' varchar(100), 'TM' varchar(100), 'Hs8NzlChg' varchar(100), 'PCBWarpMeasurement' varchar(100), 'HighSpd' varchar(100), 'HeightSensor' varchar(100), 'AutoPinChg' varchar(100), 'ConvLen' varchar(100), 'CustomTray' varchar(100), 'NPMExConvL' varchar(100), 'NPMExConvR' varchar(100), 'ThinTypeSingleFdr' varchar(100) );
-CREATE TABLE 'BoardData' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'BondData' ( 'IDNUM' varchar(100), 'LIBNAME' varchar(100), 'LIBREF' varchar(100), 'TEMPERATURE' varchar(100), 'CL' varchar(100) );
-CREATE TABLE 'BRecg' ( 'FID' varchar(100), 'IDNUM' varchar(100), 'BRecX' varchar(100), 'BRecY' varchar(100) );
-CREATE INDEX BRecg_fid_idx on 'BRecg' ( FID );
-CREATE TABLE 'ClampPositionSP' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'ComSwitch' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'StNum' varchar(100), 'DeliverType' varchar(100), 'BarCode' varchar(100), 'Badmark' varchar(100), 'APC' varchar(100), 'Ptnmark' varchar(100), 'PCBHight' varchar(100), 'LocalPCBHeight' varchar(100) );
-CREATE TABLE 'Count' ( 'FID' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE INDEX Count_fid_idx on 'Count' ( FID );
-CREATE TABLE 'CycleTime' ( 'FID' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE INDEX CycleTime_fid_idx on 'CycleTime' ( FID );
-CREATE TABLE 'DischargeRecogData' ( 'IDNUM' varchar(100), 'LAMPA' varchar(100), 'LAMPB' varchar(100), 'LAMPC' varchar(100), 'LAMPD' varchar(100), 'TP' varchar(100), 'FP' varchar(100), 'AREAMIN' varchar(100), 'AREAMAX' varchar(100), 'AREARATE' varchar(100), 'AREA' varchar(100), 'RECSTARTX' varchar(100), 'RECSTARTY' varchar(100), 'RECENDX' varchar(100), 'RECENDY' varchar(100), 'RECFLAG1' varchar(100), 'RECFLAG2' varchar(100), 'RECFLAG3' varchar(100), 'RECFLAG4' varchar(100), 'NAME' varchar(100) );
-CREATE TABLE 'DNozzleShapeData' ( 'IDNUM' varchar(100), 'NCODE' varchar(100), 'LIBNAME' varchar(100), 'LIBREF' varchar(100), 'NP' varchar(100), 'HD' varchar(100), 'INTX' varchar(100), 'INTY' varchar(100), 'STP' varchar(100), 'STPHD' varchar(100), 'STPLD' varchar(100), 'STPD' varchar(100), 'NZLPHW' varchar(100), 'NZLPLW' varchar(100), 'TO' varchar(100) );
-CREATE TABLE 'FdrTblMode' ( 'IDNUM' varchar(100), 'Head' varchar(100), 'NowStation' varchar(100), 'FdrTblMode' varchar(100), 'Pass' varchar(100), 'Type' varchar(100) );
-CREATE TABLE 'FeederData' ( 'IDNUM' varchar(100), 'Ftype' varchar(100), 'Pitch' varchar(100), 'Feed' varchar(100), 'FeedLen' varchar(100), 'Quantity' varchar(100), 'Xa' varchar(100), 'Ya' varchar(100), 'Xb' varchar(100), 'Yb' varchar(100), 'Xc' varchar(100), 'Yc' varchar(100), 'Width' varchar(100), 'Kind' varchar(100), 'REELTYPE' varchar(100), 'ReelSize' varchar(100), 'SHEIGHT' varchar(100), 'ControlType' varchar(100) );
-CREATE TABLE 'FeederMaxData' ( 'IDNUM' varchar(100), 'Name' varchar(100), 'Maxs' varchar(100) );
-CREATE TABLE 'FID_DATA' ( 'FID' varchar(100), 'FTYPE' varchar(100), 'DATE' varchar(100), 'TIMESTAMP' varchar(100), 'MACHINE' varchar(100), 'LANE' varchar(100), 'STAGE' varchar(100), 'OUTPUT' varchar(100), 'MJSID' varchar(100), 'LOTNAME' varchar(100), 'LOTNUMBER' varchar(100), 'SERIAL' varchar(100), 'PRODUCTID' varchar(100), 'PRODUCT' varchar(100) );
-CREATE INDEX FID_DATA_fid_idx on 'FID_DATA' ( FID );
-CREATE TABLE 'FILENAME_TO_IDS' ( 'FNAME' varchar(100), 'FID' varchar(100) );
-CREATE INDEX FILENAME_TO_IDS_fid_idx on 'FILENAME_TO_IDS' ( FID );
-CREATE TABLE 'FixedFeeder' ( 'IDNUM' varchar(100), 'Group' varchar(100), 'PU' varchar(100), 'FeederA' varchar(100), 'FeederB' varchar(100), 'FeederC' varchar(100), 'FeederD' varchar(100), 'FeederE' varchar(100), 'FeederF' varchar(100), 'FeederG' varchar(100), 'FeederH' varchar(100), 'FeederI' varchar(100), 'FeederJ' varchar(100), 'PartsA' varchar(100), 'PartsB' varchar(100), 'PartsC' varchar(100), 'PartsD' varchar(100), 'PartsE' varchar(100), 'PartsF' varchar(100), 'PartsG' varchar(100), 'PartsH' varchar(100), 'PartsI' varchar(100), 'PartsJ' varchar(100) );
-CREATE TABLE 'FixedNozzleStock' ( 'IDNUM' varchar(100), 'Group' varchar(100), 'N' varchar(100), 'P' varchar(100) );
-CREATE TABLE 'ForceArrangeBeam' ( 'IDNUM' varchar(100), 'Beam' varchar(100) );
-CREATE TABLE 'HeadInfo' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'Head' varchar(100), 'Tact' varchar(100), 'WaitP' varchar(100), 'WaitFeed' varchar(100), 'WaitFeedWork' varchar(100), 'WaitFeedPal' varchar(100), 'Flip' varchar(100), 'MountRcg' varchar(100), 'Turn' varchar(100), 'EmptyTurn' varchar(100), 'MountCount' varchar(100), 'NzlChg' varchar(100), 'SamePick' varchar(100), 'PalChg1' varchar(100), 'PalChg2' varchar(100) );
-CREATE TABLE 'HeightCorrect' ( 'FID' varchar(100), 'B' varchar(100), 'IDNUM' varchar(100), 'MeasureResult' varchar(100) );
-CREATE INDEX HeightCorrect_fid_idx on 'HeightCorrect' ( FID );
-CREATE TABLE 'Index' ( 'FID' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE INDEX Index_fid_idx on 'Index' ( FID );
-CREATE TABLE 'Information' ( 'FID' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE INDEX Information_fid_idx on 'Information' ( FID );
-CREATE TABLE 'InspectionData' ( 'FID' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE INDEX InspectionData_fid_idx on 'InspectionData' ( FID );
-CREATE TABLE 'LaneStageTactInfo' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'Lane' varchar(100), 'Stage' varchar(100), 'Tact' varchar(100), 'NonTransTact' varchar(100), 'PcbClampTact' varchar(100) );
-CREATE TABLE 'LineData' ( 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'LineInfoData' ( 'IDNUM' varchar(100), 'McNum' varchar(100), 'McMdln' varchar(100), 'McName' varchar(100), 'StartBeam' varchar(100), 'BeamNum' varchar(100), 'Pass' varchar(100), 'SecMntHld' varchar(100), 'PrevMachine' varchar(100), 'NextMachine' varchar(100) );
-CREATE TABLE 'LotNames' ( 'IDNUM' varchar(100), 'LotNum' varchar(100), 'Lot' varchar(100), 'MCFileName' varchar(100), 'Filter' varchar(100), 'AutoChg' varchar(100), 'BaseChg' varchar(100), 'Lane' varchar(100), 'ProductionID' varchar(100), 'SimProduct' varchar(100), 'DGSPCBName' varchar(100), 'DGSPCBRev' varchar(100), 'DGSPCBSide' varchar(100), 'DGSRefPin' varchar(100), 'C' varchar(100), 'DataGenMode' varchar(100), 'MountHead' varchar(100), 'VSTPath' varchar(100) );
-CREATE TABLE 'LotOptions' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'MaskDataSP' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'MaskRecogData' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'MountCondition' ( 'IDNUM' varchar(100), 'NR' varchar(100), 'NOZZLEA' varchar(100), 'NOZZLEB' varchar(100), 'NOZZLEC' varchar(100), 'NOZZLED' varchar(100), 'NOZZLEE' varchar(100), 'TGAP' varchar(100), 'MGAP' varchar(100), 'TUPX' varchar(100), 'TUPY' varchar(100), 'TUPZ' varchar(100), 'RZ' varchar(100), 'MZ' varchar(100), 'SZ' varchar(100), 'TSPD' varchar(100), 'MSPD' varchar(100), 'FS' varchar(100), 'TUPT' varchar(100), 'MNTT' varchar(100), 'VSEL' varchar(100), 'Camera' varchar(100), 'LampMode' varchar(100), 'RcgMode' varchar(100), 'HMFLAG' varchar(100), 'HMGAP' varchar(100), 'TMFLAG' varchar(100), 'TMTIMING' varchar(100), 'HMAX' varchar(100), 'HMIN' varchar(100), 'POLARIZE' varchar(100), 'MRECA' varchar(100), 'LOAD' varchar(100), 'FLUX' varchar(100), 'Fluxload' varchar(100), 'STZ' varchar(100), 'SQGAP' varchar(100), 'STTIME' varchar(100), 'STSPD' varchar(100), 'ThDMntGap' varchar(100), 'LMFLAG' varchar(100), 'NoSimTkup' varchar(100), 'FLOAT' varchar(100), 'LTYP' varchar(100), 'FMAX' varchar(100), 'LSA' varchar(100), 'LSB' varchar(100), 'LSC' varchar(100), 'LSD' varchar(100), 'FLUXR' varchar(100), 'TkupTol' varchar(100), 'TkupTeach' varchar(100), 'VSMC' varchar(100), 'STEPMNT' varchar(100), 'SFeedLength' varchar(100), 'TkupLearn' varchar(100), 'BfrMntInspect' varchar(100), 'AdTkupBfrInspect' varchar(100), 'RcgTime' varchar(100), 'IdealRcgTime' varchar(100), 'RankMount' varchar(100), 'RankEmptyMargin' varchar(100), 'ScanCount' varchar(100), 'TkupTeach2' varchar(100), 'HMFLAG2' varchar(100), 'SplicePosAction' varchar(100), 'HSensorHMFLAG' varchar(100) );
-CREATE TABLE 'MountExchangeReel' ( 'FID' varchar(100), 'BLKCode' varchar(100), 'BLKSerial' varchar(100), 'Ftype' varchar(100), 'FAdd' varchar(100), 'FSAdd' varchar(100), 'Use' varchar(100), 'PEStatus' varchar(100), 'PCStatus' varchar(100), 'Remain' varchar(100), 'Init' varchar(100), 'PartsName' varchar(100), 'Custom1' varchar(100), 'Custom2' varchar(100), 'Custom3' varchar(100), 'Custom4' varchar(100), 'ReelID' varchar(100), 'PartsEmp' varchar(100) );
-CREATE INDEX MountExchangeReel_fid_idx on 'MountExchangeReel' ( FID );
-CREATE TABLE 'MountLatestReel' ( 'FID' varchar(100), 'BLKCode' varchar(100), 'BLKSerial' varchar(100), 'Ftype' varchar(100), 'FAdd' varchar(100), 'FSAdd' varchar(100), 'Use' varchar(100), 'PEStatus' varchar(100), 'PCStatus' varchar(100), 'Remain' varchar(100), 'Init' varchar(100), 'PartsName' varchar(100), 'Custom1' varchar(100), 'Custom2' varchar(100), 'Custom3' varchar(100), 'Custom4' varchar(100), 'ReelID' varchar(100), 'PartsEmp' varchar(100) );
-CREATE INDEX MountLatestReel_fid_idx on 'MountLatestReel' ( FID );
-CREATE TABLE 'MountNormalTrace' ( 'FID' varchar(100), 'B' varchar(100), 'IDNUM' varchar(100), 'FAdd' varchar(100), 'FSAdd' varchar(100), 'NHAdd' varchar(100), 'NCAdd' varchar(100), 'ReelID' varchar(100) );
-CREATE INDEX MountNormalTrace_fid_idx on 'MountNormalTrace' ( FID );
-CREATE TABLE 'MountPickupFeeder' ( 'FID' varchar(100), 'BLKCode' varchar(100), 'BLKSerial' varchar(100), 'UseF' varchar(100), 'PartsName' varchar(100), 'FAdd' varchar(100), 'FSAdd' varchar(100), 'ReelID' varchar(100), 'UseR' varchar(100), 'Pickup' varchar(100), 'PMiss' varchar(100), 'RMiss' varchar(100), 'DMiss' varchar(100), 'MMiss' varchar(100), 'HMiss' varchar(100), 'TRSMiss' varchar(100) );
-CREATE INDEX MountPickupFeeder_fid_idx on 'MountPickupFeeder' ( FID );
-CREATE TABLE 'MountPickupNozzle' ( 'FID' varchar(100), 'Head' varchar(100), 'NHAdd' varchar(100), 'NCAdd' varchar(100), 'BLKCode' varchar(100), 'BLKSerial' varchar(100), 'UseR' varchar(100), 'NozzleName' varchar(100), 'Pickup' varchar(100), 'PMiss' varchar(100), 'RMiss' varchar(100), 'DMiss' varchar(100), 'MMiss' varchar(100), 'HMiss' varchar(100), 'TRSMiss' varchar(100) );
-CREATE INDEX MountPickupNozzle_fid_idx on 'MountPickupNozzle' ( FID );
-CREATE TABLE 'MountQualityTrace' ( 'FID' varchar(100), 'B' varchar(100), 'IDNUM' varchar(100), 'TURN' varchar(100), 'MS' varchar(100), 'TS' varchar(100), 'FAdd' varchar(100), 'FSAdd' varchar(100), 'FBLKCode' varchar(100), 'FBLKSerial' varchar(100), 'NHAdd' varchar(100), 'NCAdd' varchar(100), 'NBLKCode' varchar(100), 'NBLKSerial' varchar(100), 'ReelID' varchar(100), 'F' varchar(100), 'RCGX' varchar(100), 'RCGY' varchar(100), 'RCGA' varchar(100), 'TCX' varchar(100), 'TCY' varchar(100), 'MPosiRecX' varchar(100), 'MPosiRecY' varchar(100), 'MPosiRecA' varchar(100), 'MPosiRecZ' varchar(100), 'THMAX' varchar(100), 'THAVE' varchar(100), 'MNTCX' varchar(100), 'MNTCY' varchar(100), 'MNTCA' varchar(100), 'TLX' varchar(100), 'TLY' varchar(100), 'InspectArea' varchar(100), 'DIDNUM' varchar(100), 'DS' varchar(100), 'DispenseID' varchar(100), 'PARTS' varchar(100), 'WarpZ' varchar(100) );
-CREATE INDEX MountQualityTrace_fid_idx on 'MountQualityTrace' ( FID );
-CREATE TABLE 'MultiPattern' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'PTN' varchar(100), 'RMODE' varchar(100) );
-CREATE TABLE 'NozzleDataNPM' ( 'IDNUM' varchar(100), 'NozzleNo' varchar(100), 'Size' varchar(100), 'TUPH' varchar(100), 'MAXH' varchar(100), 'X' varchar(100), 'Y' varchar(100), 'TX' varchar(100), 'TY' varchar(100), 'NAME' varchar(100), 'NH' varchar(100), 'CO' varchar(100), 'LO' varchar(100), 'TO' varchar(100), 'VU' varchar(100), 'VD' varchar(100), 'TT' varchar(100), 'MT' varchar(100), 'RcgMode' varchar(100), 'Fb' varchar(100), 'VSMC' varchar(100), 'AdhChk' varchar(100) );
-CREATE TABLE 'NozzleMaxData' ( 'IDNUM' varchar(100), 'NozzleNo' varchar(100), 'Nsize' varchar(100), 'Maxs' varchar(100) );
-CREATE TABLE 'NozzlePosition' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'HEAD' varchar(100), 'NPA' varchar(100), 'NPB' varchar(100), 'NPC' varchar(100), 'NPD' varchar(100), 'NPE' varchar(100), 'NPF' varchar(100), 'NPG' varchar(100), 'NPH' varchar(100), 'NPI' varchar(100), 'NPJ' varchar(100), 'NPK' varchar(100), 'NPL' varchar(100), 'NPM' varchar(100), 'NPN' varchar(100), 'NPO' varchar(100), 'NPP' varchar(100), 'TURN' varchar(100) );
-CREATE TABLE 'NozzleStock' ( 'IDNUM' varchar(100), 'N' varchar(100), 'P' varchar(100), 'Force' varchar(100) );
-CREATE TABLE 'OptimizeOptions' ( 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'PackageTchData' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'PaletteData' ( 'IDNUM' varchar(100), 'N' varchar(100), 'TRAY' varchar(100), 'X' varchar(100), 'Y' varchar(100), 'ROT' varchar(100) );
-CREATE TABLE 'PartsData' ( 'IDNUM' varchar(100), 'NAME' varchar(100), 'EX' varchar(100), 'LNAME' varchar(100), 'FA' varchar(100), 'FB' varchar(100), 'FC' varchar(100), 'FD' varchar(100), 'FE' varchar(100), 'FF' varchar(100), 'FG' varchar(100), 'FH' varchar(100), 'FI' varchar(100), 'FJ' varchar(100), 'REELS' varchar(100), 'CHIP' varchar(100), 'Shape' varchar(100), 'MCOND' varchar(100), 'DCOND' varchar(100), 'DCOND2' varchar(100), 'ICOND' varchar(100), 'SKIP' varchar(100), 'A' varchar(100), 'PACK' varchar(100), 'PACKB' varchar(100), 'SSIZE' varchar(100), 'RETRY' varchar(100), 'ESTOP' varchar(100), 'ThrowAway' varchar(100), 'LandA' varchar(100), 'LandB' varchar(100), 'LandC' varchar(100), 'LandD' varchar(100), 'PreSend' varchar(100), 'NoArrange' varchar(100), 'Proved' varchar(100), 'UsePeriod' varchar(100), 'C' varchar(100), 'CoverSize' varchar(100), 'Teach' varchar(100), 'C2' varchar(100), 'RETRYCOUNT' varchar(100), 'ESTOPCOUNT' varchar(100), 'RETRYCOUNT2' varchar(100) );
-CREATE TABLE 'PatternAttribute' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'PNUM' varchar(100), 'OX' varchar(100), 'OY' varchar(100), 'OZ' varchar(100), 'B' varchar(100), 'PTN' varchar(100), 'PG' varchar(100), 'ROT' varchar(100), 'PCBPosition' varchar(100), 'C' varchar(100), 'LABELX' varchar(100), 'LABELY' varchar(100) );
-CREATE TABLE 'PatternData' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'O' varchar(100), 'X' varchar(100), 'Y' varchar(100), 'A' varchar(100), 'PARTS' varchar(100), 'BRM' varchar(100), 'C' varchar(100), 'M' varchar(100), 'F' varchar(100), 'PR' varchar(100), 'MB' varchar(100), 'PRISEQ' varchar(100), 'MArea' varchar(100), 'SkipNumber' varchar(100) );
-CREATE TABLE 'PatternGrouping' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'GRPNUM' varchar(100), 'C' varchar(100), 'RMODE' varchar(100) );
-CREATE TABLE 'PCBConveyance' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'Stage' varchar(100), 'ConveySpeed1' varchar(100), 'ConveySpeed2' varchar(100), 'SlowDownDistance' varchar(100) );
-CREATE TABLE 'PositionData' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'CADID' varchar(100), 'X' varchar(100), 'Y' varchar(100), 'A' varchar(100), 'PARTS' varchar(100), 'BRM' varchar(100), 'TURN' varchar(100), 'DTURN' varchar(100), 'TS' varchar(100), 'MS' varchar(100), 'DS' varchar(100), 'NP' varchar(100), 'DNP' varchar(100), 'PU' varchar(100), 'SIDE' varchar(100), 'DPU' varchar(100), 'HEAD' varchar(100), 'DHEAD' varchar(100), 'IHEAD' varchar(100), 'B' varchar(100), 'PG' varchar(100), 'S' varchar(100), 'RID' varchar(100), 'C' varchar(100), 'M' varchar(100), 'MB' varchar(100), 'F' varchar(100), 'PR' varchar(100), 'PRISEQ' varchar(100), 'P' varchar(100), 'PAD' varchar(100), 'VW' varchar(100), 'StdPos' varchar(100), 'LAND' varchar(100), 'Depend' varchar(100), 'ChkFlag' varchar(100), 'ExChk' varchar(100), 'Grand' varchar(100), 'MArea' varchar(100), 'RMSet' varchar(100), 'SH' varchar(100), 'ScanDir1' varchar(100), 'ScanDir2' varchar(100), 'OHL' varchar(100), 'OHR' varchar(100), 'ApcCtrl' varchar(100), 'WG' varchar(100), 'SkipNumber' varchar(100) );
-CREATE TABLE 'PrintPositionSP' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'RecognitionMark' ( 'IDNUM' varchar(100), 'KIND' varchar(100), 'ATT' varchar(100), 'REF' varchar(100), 'LAMPA' varchar(100), 'LAMPB' varchar(100), 'LAMPC' varchar(100), 'LAMPD' varchar(100), 'TYPE' varchar(100), 'SIZEA' varchar(100), 'SIZEB' varchar(100), 'SIZEC' varchar(100), 'SIZED' varchar(100), 'SIZEE' varchar(100), 'SIZEF' varchar(100), 'SIZEG' varchar(100), 'SIZEH' varchar(100), 'DARK' varchar(100), 'TH' varchar(100), 'AREA' varchar(100), 'JUDGE' varchar(100), 'RECSTARTX' varchar(100), 'RECSTARTY' varchar(100), 'RECENDX' varchar(100), 'RECENDY' varchar(100), 'THUP' varchar(100), 'THDOWN' varchar(100), 'RPARA' varchar(100), 'RNUM' varchar(100), 'RAREA' varchar(100) );
-CREATE TABLE 'RecogSeqInfo' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'POS' varchar(100), 'McNum' varchar(100), 'RS' varchar(100), 'MArea' varchar(100), 'BRecMode' varchar(100), 'B' varchar(100), 'PG' varchar(100), 'S' varchar(100) );
-CREATE TABLE 'RelativePriority' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'CNO' varchar(100), 'Pri_SEQ' varchar(100), 'Sec_SEQ' varchar(100), 'MODE' varchar(100) );
-CREATE TABLE 'Shape3DPrm' ( 'IDNUM' varchar(100), 'Thl' varchar(100) );
-CREATE TABLE 'Shape3DSensor' ( 'IDNUM' varchar(100), 'PowerA' varchar(100), 'PowerB' varchar(100), 'ThlA' varchar(100), 'ThlB' varchar(100), 'Light' varchar(100) );
-CREATE TABLE 'Shape3DSensorPSD' ( 'IDNUM' varchar(100), 'AngFlag' varchar(100) );
-CREATE TABLE 'ShapeBase' ( 'IDNUM' varchar(100), 'PhysicalClass' varchar(100), 'FunctionClass' varchar(100), 'Algo' varchar(100), 'ChipL' varchar(100), 'ChipW' varchar(100), 'ChipH' varchar(100), 'RCGSP' varchar(100), 'PolId' varchar(100), 'Shape' varchar(100), 'PosUp' varchar(100), 'PosMethod' varchar(100), 'ShapeChk' varchar(100), 'ShapeEtc' varchar(100), 'LMPA' varchar(100), 'LMPB' varchar(100), 'LMPC' varchar(100), 'LMPA2' varchar(100), 'LMPB2' varchar(100), 'LMPC2' varchar(100), 'Round' varchar(100), 'MntTeachPos' varchar(100) );
-CREATE TABLE 'ShapeBaseChk' ( 'IDNUM' varchar(100), 'SizeAllow' varchar(100), 'SizeChk' varchar(100), 'AngleCalcChk' varchar(100), 'CenterRangeChk' varchar(100), 'TakeUpChk' varchar(100), 'OverChk' varchar(100), 'AdjacentChk' varchar(100), 'SupplyDirChk' varchar(100), 'SideStandChk' varchar(100), 'StandChk' varchar(100), 'RollChk' varchar(100), 'BrightChk' varchar(100), 'FloatChk' varchar(100), 'FloatAllowMaster' varchar(100), 'FluxChk' varchar(100), 'SolderChk' varchar(100), 'POPRecChk' varchar(100), 'DblPickUpChk' varchar(100) );
-CREATE TABLE 'ShapeBaseEtc' ( 'IDNUM' varchar(100), 'BoxSide' varchar(100), 'Inverse' varchar(100), 'EasySupportFlag' varchar(100), 'EdgePrm' varchar(100), 'TriPrm' varchar(100), 'SamplingPrm' varchar(100), 'AccuPrm' varchar(100), 'C2DPrm' varchar(100), 'C3DPrm' varchar(100), 'C3DSensor' varchar(100), 'C3DSensorPSD' varchar(100), 'OldFashion' varchar(100), 'InsLeadDetail' varchar(100), 'CMRef' varchar(100), 'RndShp' varchar(100) );
-CREATE TABLE 'ShapeBasePosMethod' ( 'IDNUM' varchar(100), 'NoAngle' varchar(100), 'NoCenter' varchar(100), 'AngleCalcMethod' varchar(100), 'CenterDef' varchar(100), 'MountOffset' varchar(100) );
-CREATE TABLE 'ShapeBaseShape' ( 'IDNUM' varchar(100), 'Mold' varchar(100), 'LGrp' varchar(100), 'ILGrp' varchar(100), 'Square' varchar(100), 'Circle' varchar(100), 'Line' varchar(100), 'Corner' varchar(100), 'Rectangle' varchar(100), 'UBall' varchar(100), 'UBallB' varchar(100), 'BGrp' varchar(100), 'BlkMch' varchar(100) );
-CREATE TABLE 'ShapeBrightChk' ( 'IDNUM' varchar(100), 'T' varchar(100), 'Cx' varchar(100), 'Cy' varchar(100), 'Dx' varchar(100), 'Dy' varchar(100), 'Method' varchar(100), 'Mode' varchar(100), 'Upper' varchar(100), 'Lower' varchar(100), 'NEXT' varchar(100) );
-CREATE TABLE 'ShapeCenterRangeChk' ( 'IDNUM' varchar(100), 'Dx' varchar(100), 'Dy' varchar(100), 'Wx' varchar(100), 'Wy' varchar(100) );
-CREATE TABLE 'ShapeCorner' ( 'IDNUM' varchar(100), 'Atrb' varchar(100), 'T' varchar(100), 'Cx' varchar(100), 'Cy' varchar(100), 'Dx' varchar(100), 'Dy' varchar(100), 'PosChk' varchar(100), 'NEXT' varchar(100) );
-CREATE TABLE 'ShapeCutLead' ( 'IDNUM' varchar(100), 'Group' varchar(100), 'Num' varchar(100), 'Pos' varchar(100), 'NEXT' varchar(100) );
-CREATE TABLE 'ShapeDblPickUpChk' ( 'IDNUM' varchar(100), 'Check' varchar(100) );
-CREATE TABLE 'ShapeFloatAllow' ( 'IDNUM' varchar(100), 'F' varchar(100) );
-CREATE TABLE 'ShapeLeadBendAllow' ( 'IDNUM' varchar(100), 'Pm' varchar(100) );
-CREATE TABLE 'ShapeLeadGroup' ( 'IDNUM' varchar(100), 'LType' varchar(100), 'LSect' varchar(100), 'N' varchar(100), 'P' varchar(100), 'W' varchar(100), 'L' varchar(100), 'T' varchar(100), 'Cx' varchar(100), 'Cy' varchar(100), 'NEXT' varchar(100), 'MISS' varchar(100), 'MISSA' varchar(100), 'PointShape' varchar(100), 'BEND' varchar(100), 'END' varchar(100), 'PointLen' varchar(100), 'DetectPos' varchar(100), 'DetectWidth' varchar(100), 'HPos' varchar(100), 'WAllow' varchar(100), 'BendAllow' varchar(100), 'FloatAllow' varchar(100), 'LackChk' varchar(100), 'DirChk' varchar(100), 'Irr' varchar(100), 'PosChk' varchar(100) );
-CREATE TABLE 'ShapeLeadWAllow' ( 'IDNUM' varchar(100), 'Wm' varchar(100) );
-CREATE TABLE 'ShapeLine' ( 'IDNUM' varchar(100), 'Atrb' varchar(100), 'T' varchar(100), 'Cx' varchar(100), 'Cy' varchar(100), 'L' varchar(100), 'PosChk' varchar(100), 'NEXT' varchar(100) );
-CREATE TABLE 'ShapeMold' ( 'IDNUM' varchar(100), 'Col' varchar(100), 'Shape' varchar(100), 'Dx' varchar(100), 'Dy' varchar(100), 'Cx' varchar(100), 'Cy' varchar(100), 'IrrRange' varchar(100), 'NEXT' varchar(100) );
-CREATE TABLE 'ShapeMountOffset' ( 'IDNUM' varchar(100), 'Cx' varchar(100), 'Cy' varchar(100), 'T' varchar(100) );
-CREATE TABLE 'ShapePol' ( 'IDNUM' varchar(100), 'Pol' varchar(100), 'PolMark' varchar(100), 'PCx' varchar(100), 'PCy' varchar(100), 'PDx' varchar(100), 'PDy' varchar(100) );
-CREATE TABLE 'ShapeSquare' ( 'IDNUM' varchar(100), 'Atrb' varchar(100), 'T' varchar(100), 'Cx' varchar(100), 'Cy' varchar(100), 'Dx' varchar(100), 'Dy' varchar(100), 'PosChk' varchar(100), 'NEXT' varchar(100) );
-CREATE TABLE 'SimultaneousProduct' ( 'IDNUM' varchar(100), 'Group' varchar(100), 'Sim' varchar(100), 'Lot' varchar(100) );
-CREATE TABLE 'SoftSwitch' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'McNum' varchar(100), 'MasterBadMark' varchar(100), 'BadMarkGroup' varchar(100), 'BadMark' varchar(100), 'RecogOrder' varchar(100), 'BoardRecog' varchar(100), 'BoardRecogMode' varchar(100), 'Mrec' varchar(100), 'IH' varchar(100), 'PCBHeightMeasure' varchar(100), 'HeightCorrectMode' varchar(100), 'CarType' varchar(100), 'AutoSpl' varchar(100), 'PasteRecog' varchar(100), 'PrClean' varchar(100), 'AutoChg' varchar(100), 'BrdLngChk' varchar(100), 'MaskRecog' varchar(100), 'Dispense' varchar(100), 'Discharge' varchar(100), 'AltCtrl' varchar(100), 'DisCnt1' varchar(100), 'DisCnt2' varchar(100), 'NAFB' varchar(100), 'NBFB' varchar(100), 'Pass' varchar(100), 'CJBRecog' varchar(100), 'SameBadRecog' varchar(100), 'TrayOrder' varchar(100), 'TraySupply' varchar(100), 'RecogErrBad' varchar(100), 'BarcodeRecog' varchar(100), 'PtnBarcodeRecog' varchar(100), 'PtnGrpBarcodeRecog' varchar(100), 'NGChipEjectFirst' varchar(100), 'PinChg' varchar(100), 'Inspect' varchar(100), 'OverJudgeChk' varchar(100), 'NGBoardReCarryIn' varchar(100), 'NGBoardBarcodeAttach' varchar(100), 'IPBoxPrintOut' varchar(100), 'OHL' varchar(100), 'OHR' varchar(100), 'ProgDistRecog' varchar(100), 'NGReCarryInBarcode' varchar(100), 'MountMode' varchar(100), 'FastFeedSpd' varchar(100), 'BRecogAfterPickup' varchar(100), 'MarkSearch' varchar(100), 'LocalPCBHeightMeasure' varchar(100), 'PtnMntCancel' varchar(100), 'PtnPartEmpty1' varchar(100), 'PtnPartEmpty2' varchar(100), 'SafeMode' varchar(100), 'MntPosRcgPCBRcgCorr' varchar(100), 'TrayPreSupply' varchar(100), 'CarrybackChk' varchar(100), 'MrecaPickup' varchar(100) );
-CREATE TABLE 'SoftSwitchPerBeam' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'Head' varchar(100), 'HPartAdMount' varchar(100), 'PickupSizeUpFor4' varchar(100), 'PickupSizeUpFor8' varchar(100), 'PickupSizeMaxFor4' varchar(100), 'PickupSizeMaxFor8' varchar(100), 'TactBalanceRatio' varchar(100), 'NoUseTable' varchar(100), 'InspectType' varchar(100), 'PickupSizeUpFor2' varchar(100), 'PickupSizeMaxFor2' varchar(100), 'RankMountTbl' varchar(100), 'PickupSizeUpByDiagonal' varchar(100), 'PartHeightSizeUp' varchar(100) );
-CREATE TABLE 'SqueegeeOffsetSP' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'StageTactInfo' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'Stage' varchar(100), 'Tact' varchar(100), 'PRcg' varchar(100), 'Pre' varchar(100), 'Idl1' varchar(100), 'Idl2' varchar(100), 'WaitMnt1' varchar(100), 'WaitMnt2' varchar(100), 'WaitRcg1' varchar(100), 'WaitRcg2' varchar(100), 'Hd1' varchar(100), 'Hd2' varchar(100), 'CnvSt' varchar(100), 'PRcgEND' varchar(100), 'WaitPRcg' varchar(100), 'MntCnt' varchar(100), 'PCnt' varchar(100), 'NonTransTact' varchar(100), 'PcbClampTact' varchar(100) );
-CREATE TABLE 'StockData' ( 'IDNUM' varchar(100), 'N' varchar(100), 'PA' varchar(100), 'PB' varchar(100), 'PC' varchar(100), 'PD' varchar(100), 'PE' varchar(100), 'PF' varchar(100), 'PG' varchar(100), 'PH' varchar(100), 'PI' varchar(100), 'PJ' varchar(100), 'TA' varchar(100), 'TB' varchar(100), 'TC' varchar(100), 'TD' varchar(100), 'TE' varchar(100), 'TF' varchar(100), 'TG' varchar(100), 'TH' varchar(100), 'TI' varchar(100), 'TJ' varchar(100), 'Force' varchar(100) );
-CREATE TABLE 'SupportPinExtension' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'McNum' varchar(100), 'POS' varchar(100), 'SKIP' varchar(100) );
-CREATE TABLE 'SupportPinLocation' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'X' varchar(100), 'Y' varchar(100), 'USE' varchar(100) );
-CREATE TABLE 'TactInfo' ( 'LOTNO' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE TABLE 'Time' ( 'FID' varchar(100), 'NAME' varchar(100), 'VALUE' varchar(100) );
-CREATE INDEX Time_fid_idx on 'Time' ( FID );
-CREATE TABLE 'TrayData' ( 'IDNUM' varchar(100), 'NAME' varchar(100), 'L' varchar(100), 'W' varchar(100), 'T' varchar(100), 'OXA' varchar(100), 'OYA' varchar(100), 'OXB' varchar(100), 'OYB' varchar(100), 'PZ' varchar(100), 'MX' varchar(100), 'MY' varchar(100), 'MZ' varchar(100), 'MSA' varchar(100), 'MSB' varchar(100), 'MSC' varchar(100), 'MSD' varchar(100), 'RSP' varchar(100), 'HSP' varchar(100), 'DX' varchar(100), 'DY' varchar(100), 'P' varchar(100), 'PR' varchar(100), 'RECOG' varchar(100) );
-CREATE TABLE 'TrayTableMode' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'TBL' varchar(100), 'Mode' varchar(100), 'Side' varchar(100), 'Magazine' varchar(100), 'Priority' varchar(100), 'Flexible' varchar(100) );
-CREATE TABLE 'VstockData' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'N' varchar(100), 'PA' varchar(100), 'PB' varchar(100), 'PC' varchar(100), 'PD' varchar(100), 'PE' varchar(100), 'PF' varchar(100), 'PG' varchar(100), 'PH' varchar(100), 'PI' varchar(100), 'PJ' varchar(100), 'TA' varchar(100), 'TB' varchar(100), 'TC' varchar(100), 'TD' varchar(100), 'TE' varchar(100), 'TF' varchar(100), 'TG' varchar(100), 'TH' varchar(100), 'TI' varchar(100), 'TJ' varchar(100), 'Force' varchar(100) );
+.output sql/crb.trc.sql.csv
 
+select
+    fd.fid,
+    fd.ftype,
+    fd.date,
+    fd.timestamp,
+    fd.machine,
+    fd.lane,
+    fd.stage,
+    fd.output,
+    fd.mjsid,
+    fd.lotname,
+    fd.lotnumber,
+    fd.serial,
+    fd.productid,
+    fd.product,
+    ln.idnum,
+    ln.lotnum,
+    ln.lot,
+    ln.mcfilename,
+    ln.filter,
+    ln.autochg,
+    ln.basechg,
+    ln.lane,
+    ln.productionid,
+    ln.simproduct,
+    ln.dgspcbname,
+    ln.dgspcbrev,
+    ln.dgspcbside,
+    ln.dgsrefpin,
+    ln.c,
+    ln.datagenmode,
+    ln.mounthead,
+    ln.vstpath,
+    mqt.fid,
+    mqt.b,
+    mqt.idnum,
+    mqt.turn,
+    mqt.ms,
+    mqt.ts,
+    mqt.fadd,
+    mqt.fsadd,
+    mqt.fblkcode,
+    mqt.fblkserial,
+    mqt.nhadd,
+    mqt.ncadd,
+    mqt.nblkcode,
+    mqt.nblkserial,
+    mqt.reelid,
+    mqt.f,
+    mqt.rcgx,
+    mqt.rcgy,
+    mqt.rcga,
+    mqt.tcx,
+    mqt.tcy,
+    mqt.mposirecx,
+    mqt.mposirecy,
+    mqt.mposireca,
+    mqt.mposirecz,
+    mqt.thmax,
+    mqt.thave,
+    mqt.mntcx,
+    mqt.mntcy,
+    mqt.mntca,
+    mqt.tlx,
+    mqt.tly,
+    mqt.inspectarea,
+    mqt.didnum,
+    mqt.ds,
+    mqt.dispenseid,
+    mqt.parts,
+    mqt.warpz,
+    pd.lotno,
+    pd.idnum,
+    pd.cadid,
+    pd.x,
+    pd.y,
+    pd.a,
+    pd.parts,
+    pd.brm,
+    pd.turn,
+    pd.dturn,
+    pd.ts,
+    pd.ms,
+    pd.ds,
+    pd.np,
+    pd.dnp,
+    pd.pu,
+    pd.side,
+    pd.dpu,
+    pd.head,
+    pd.dhead,
+    pd.ihead,
+    pd.b,
+    pd.pg,
+    pd.s,
+    pd.rid,
+    pd.c,
+    pd.m,
+    pd.mb,
+    pd.f,
+    pd.pr,
+    pd.priseq,
+    pd.p,
+    pd.pad,
+    pd.vw,
+    pd.stdpos,
+    pd.land,
+    pd.depend,
+    pd.chkflag,
+    pd.exchk,
+    pd.grand,
+    pd.marea,
+    pd.rmset,
+    pd.sh,
+    pd.scandir1,
+    pd.scandir2,
+    pd.ohl,
+    pd.ohr,
+    pd.apcctrl,
+    pd.wg,
+    pd.skipnumber
+from
+    fid_data fd
+left join
+    lotnames ln
+on
+    ln.lot = fd.lotname
+and
+    ln.lotnum = fd.lotnumber
+join
+    mountqualitytrace mqt
+on
+    mqt.fid = fd.fid
+left join
+    positiondata pd
+on
+    pd.lotno = fd.lotnumber
+and
+    pd.idnum = mqt.idnum;
 
+.output
 
-CREATE TABLE 'FID_DATA' ( 'FID' varchar(100), 'FTYPE' varchar(100), 'DATE' varchar(100), 'TIMESTAMP' varchar(100), 'MACHINE' varchar(100), 'LANE' varchar(100), 'STAGE' varchar(100), 'OUTPUT' varchar(100), 'MJSID' varchar(100), 'LOTNAME' varchar(100), 'LOTNUMBER' varchar(100), 'SERIAL' varchar(100), 'PRODUCTID' varchar(100), 'PRODUCT' varchar(100) );
-CREATE TABLE 'MountQualityTrace' ( 'FID' varchar(100), 'B' varchar(100), 'IDNUM' varchar(100), 'TURN' varchar(100), 'MS' varchar(100), 'TS' varchar(100), 'FAdd' varchar(100), 'FSAdd' varchar(100), 'FBLKCode' varchar(100), 'FBLKSerial' varchar(100), 'NHAdd' varchar(100), 'NCAdd' varchar(100), 'NBLKCode' varchar(100), 'NBLKSerial' varchar(100), 'ReelID' varchar(100), 'F' varchar(100), 'RCGX' varchar(100), 'RCGY' varchar(100), 'RCGA' varchar(100), 'TCX' varchar(100), 'TCY' varchar(100), 'MPosiRecX' varchar(100), 'MPosiRecY' varchar(100), 'MPosiRecA' varchar(100), 'MPosiRecZ' varchar(100), 'THMAX' varchar(100), 'THAVE' varchar(100), 'MNTCX' varchar(100), 'MNTCY' varchar(100), 'MNTCA' varchar(100), 'TLX' varchar(100), 'TLY' varchar(100), 'InspectArea' varchar(100), 'DIDNUM' varchar(100), 'DS' varchar(100), 'DispenseID' varchar(100), 'PARTS' varchar(100), 'WarpZ' varchar(100) );
-CREATE TABLE 'PositionData' ( 'LOTNO' varchar(100), 'IDNUM' varchar(100), 'CADID' varchar(100), 'X' varchar(100), 'Y' varchar(100), 'A' varchar(100), 'PARTS' varchar(100), 'BRM' varchar(100), 'TURN' varchar(100), 'DTURN' varchar(100), 'TS' varchar(100), 'MS' varchar(100), 'DS' varchar(100), 'NP' varchar(100), 'DNP' varchar(100), 'PU' varchar(100), 'SIDE' varchar(100), 'DPU' varchar(100), 'HEAD' varchar(100), 'DHEAD' varchar(100), 'IHEAD' varchar(100), 'B' varchar(100), 'PG' varchar(100), 'S' varchar(100), 'RID' varchar(100), 'C' varchar(100), 'M' varchar(100), 'MB' varchar(100), 'F' varchar(100), 'PR' varchar(100), 'PRISEQ' varchar(100), 'P' varchar(100), 'PAD' varchar(100), 'VW' varchar(100), 'StdPos' varchar(100), 'LAND' varchar(100), 'Depend' varchar(100), 'ChkFlag' varchar(100), 'ExChk' varchar(100), 'Grand' varchar(100), 'MArea' varchar(100), 'RMSet' varchar(100), 'SH' varchar(100), 'ScanDir1' varchar(100), 'ScanDir2' varchar(100), 'OHL' varchar(100), 'OHR' varchar(100), 'ApcCtrl' varchar(100), 'WG' varchar(100), 'SkipNumber' varchar(100) );
