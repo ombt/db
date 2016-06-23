@@ -1,5 +1,8 @@
-.output sql/crb.trc.sql.csv
+-- .output sql/crb.trc.sql.csv
 
+create table
+    denorm_data
+as
 select
     fd.fid,
     fd.ftype,
@@ -138,7 +141,13 @@ left join
 on
     pd.lotno = fd.lotnumber
 and
-    pd.idnum = mqt.idnum;
+    pd.idnum = mqt.idnum
+order by
+    fd.timestamp,
+    fd.machine,
+    fd.lane,
+    fd.stage
+;
 
-.output
+-- .output
 
